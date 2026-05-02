@@ -1,0 +1,159 @@
+; ============================================================
+; DRONE OPS — OPERATOR CARD SCRIPT
+; Card size: 2.5 x 3.5 in (poker)
+; Print target: MakePlayingCards (300 DPI, 0.12in bleed)
+; Canvas size including bleed: 2.74 x 3.74 in
+; ============================================================
+
+[card_x] = 6.985
+[card_y] = 9.484
+
+; --- PAGE & CARD SETUP ---
+PAGE=21, 29.7, LANDSCAPE
+CARDSIZE=[card_x], [card_y]
+UNIT=CM
+DPI=300
+
+; --- LINK CSV DATA ---
+LINK=operator_test.csv
+
+; ============================================================
+; COLOR PALETTE
+; ============================================================
+[color_out]=#717375
+[color_bg]=#FFFFFF
+[color_border_standard]=#717375
+[color_border_legendary]=#B8860B
+[color_divider]=#979797
+[color_pill]=#B7B7B7
+[color_name]=#1A1A1A
+[color_role]=#555555
+[color_skill_label]=#333333
+[color_special]=#8B0000
+[color_meta]=#888888
+
+
+; ============================================================
+; Pip Icons
+; ============================================================
+
+ICON=,A,pips/agriculture.png
+ICON=,E,pips/environmental_science.png
+ICON=,B,pips/biology_wildlife.png
+ICON=,P,pips/public_safety.png
+ICON=,I,pips/industrial_infrastructure.png
+ICON=,M,pips/media.png
+
+
+; ============================================================
+; BACKGROUND — conditional on Legendary column
+; ============================================================
+
+
+
+IF=[Legendary]=TRUE
+RECTANGLE=, 0, 0, [card_x], [card_y], [color_border_legendary]
+ELSE
+RECTANGLE=, 0, 0, [card_x], [card_y], [color_border_standard]
+ENDIF
+
+; ============================================================
+; FRAME
+; ============================================================
+
+[border_xy] = 0.3
+ROUNDRECT = , [border_xy], [border_xy], [card_x]-2*[border_xy], 8.984, #383838, #FEE9C2, 0.05, 5
+
+; ============================================================
+; NAME & ROLE
+; ============================================================
+[name_y] = 0.7
+[pill_x] = 0.6
+[name_x] = [pill_x]+.2
+ROUNDRECT = , [pill_x], [name_y], [card_x]-2*[pill_x], 1.2, #383838, [color_pill], 0.05, 10
+FONT=Arial, 12, BT, [color_name]
+TEXT=, "[Name]", [name_x], [name_y]+.1, [card_x]-[name_x]-[pill_x], 0.55, LEFT
+
+FONT=Arial, 9,TI, [color_name]
+TEXT=, "[Role]", [name_x]+.2, [name_y]+.7, [card_x]-[name_x]-[pill_x]-.2, 0.4, LEFT
+
+; ============================================================
+; PORTRAIT — top half of card
+; ============================================================
+
+[image_y] = [name_y]+1.3
+[image_x] = 0.6
+[image_height] = 2.8
+IMAGE=, "[Image]", [image_x], [image_y], [card_x]-2*[image_x], [image_height], 0, P
+
+; ============================================================
+; Location and Organization
+; ============================================================
+
+[card_text_x] = 0.6
+[card_text_y] = [image_y]+[image_height]-.4
+;[image_y]+4.5+.3
+
+FONT=Arial, 10, BT, #333333
+TEXT=,"[Location]",[card_text_x],[card_text_y],[card_x]-2*[card_text_x],.8,LEFT,BOTTOM
+
+TEXT=,"[Organization]",[card_text_x],[card_text_y]+.4,[card_x]-2*[card_text_x],.8,LEFT,BOTTOM
+
+; ============================================================
+; SKILL PIPS
+; Label font declared once outside IF blocks
+; Only non-zero categories render
+; Pip images: agriculture.png, environmental_science.png,
+;             biology_wildlife.png, public_safety.png,
+;             industrial_infrastructure.png, media.png
+; ============================================================
+
+FONT=Arial, 7, BT, #333333
+
+[skill_x] = 0.5
+[skill_y] = 0.5 + [card_text_y] + 0.8
+[pip_size] = 0.9
+
+{ICONS=,JOIN(
+    REPEAT(A,{Agriculture?}),
+    REPEAT(E,{Environmental_Science?}),
+    REPEAT(B,{Biology_Wildlife?}),
+    REPEAT(P,{Public_Safety?}),
+    REPEAT(I,{Industrial_Infrastructure?}),
+    REPEAT(M,{Media?})),
+    [skill_x],[skill_y],[card_x]-2*[skill_x],[pip_size],[pip_size],[pip_size],0,P,CENTER,TOP}
+
+; ============================================================
+; SPECIAL INSTRUCTIONS — renders only if field is not empty
+; ============================================================
+
+[text_x] = 0.6
+[text_y] = [skill_y]+[pip_size]+.1
+COUNTER = , AA, 0.1
+
+IF=[Special_Instructions]<>""
+FONT=Arial, 8, TB, [color_special]
+TEXT=, "[Special_Instructions]", [text_x], [text_y], [card_x]-2*[text_x], 1, left,wordwrap
+counter=,AA,[text_y]+1.1
+ELSE
+counter=,AA,[text_y]
+ENDIF
+
+
+
+; ============================================================
+; Flavor text — renders only if field is not empty
+; ============================================================
+IF=[Flavor_Text]<>""
+FONT=Arial, 8, TI, [color_special]
+TEXT=, "[Flavor_Text]", [text_x], AA, [card_x]-2*[text_x], 1, left,wordwrap
+ENDIF
+
+
+; ============================================================
+; CONTACT / META — bottom of card
+; ============================================================
+FONT=Arial, 9, TI , [color_meta]
+TEXT=, "[Email]", [text_x], [card_y]-.7, [card_x]-2*[text_x], 0.3
+
+DISPLAY = "operator_cards.png"

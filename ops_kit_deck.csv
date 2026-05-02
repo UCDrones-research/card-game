@@ -1,0 +1,7 @@
+Type,Flavor_Text,Image,Quantity
+Permit,Authorizes operations beyond standard Part 107 limitations including night flight and flight over people.,ops/permit.png,3
+Drone Restriction,Only aircraft on the Department of Defense Blue UAS list may be used for federal contracts requiring data security.,ops/drone.png,3
+Airspace Authorization,Automated airspace authorization for operations in controlled airspace below 400 feet AGL.,ops/airspace.png,3
+Terrain Equipment,"Specialized ground support equipment for operations in remote, rugged, or waterlogged terrain.",ops/terrain.png,3
+Specialized Payload,"Captures data across multiple wavelengths for crop health, environmental, and scientific analysis.",ops/payload.png,3
+Crew Support,Trained ground crew maintaining unaided visual contact with the aircraft during operations beyond pilot line of sight.,ops/crew.png,3

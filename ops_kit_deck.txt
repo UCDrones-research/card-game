@@ -1,0 +1,76 @@
+; ============================================================
+; DRONE OPS — OPS KIT CARD SCRIPT
+; Card size: 2.5 x 3.5 in (poker)
+; Print target: MakePlayingCards (300 DPI, 0.12in bleed)
+; Canvas size including bleed: 2.74 x 3.74 in
+; ============================================================
+
+[card_x] = 6.985
+[card_y] = 9.484
+
+; --- PAGE & CARD SETUP ---
+PAGE=21, 29.7, LANDSCAPE
+CARDSIZE=[card_x], [card_y]
+UNIT=CM
+DPI=300
+
+; --- LINK CSV DATA ---
+LINKMULTI=Quantity
+LINK=ops_kit_deck.csv
+
+
+; ============================================================
+; COLOR PALETTE
+; ============================================================
+[color_out]=#717375
+[color_bg]=#FFFFFF
+[color_border_standard]=#717375
+[color_border_legendary]=#B8860B
+[color_divider]=#979797
+[color_pill]=#B7B7B7
+[color_name]=#1A1A1A
+[color_role]=#555555
+[color_skill_label]=#333333
+[color_special]=#8B0000
+[color_meta]=#888888
+
+; ============================================================
+; BACKGROUND — conditional on Legendary column
+; ============================================================
+
+RECTANGLE=, 0, 0, [card_x], [card_y], [color_border_standard]
+
+; ============================================================
+; FRAME
+; ============================================================
+
+[border_xy] = 0.3
+ROUNDRECT = , [border_xy], [border_xy], [card_x]-2*[border_xy], 8.984, #383838, #C8D8E8, 0.05, 5
+
+; ============================================================
+; NAME & ROLE
+; ============================================================
+[name_y] = 0.7
+[pill_x] = 0.6
+[name_x] = [pill_x]+.2
+ROUNDRECT = , [pill_x], [name_y], [card_x]-2*[pill_x], 1.2, #383838, [color_pill], 0.05, 10
+FONT=Arial, 12, BT, [color_name]
+TEXT=, "[Type]", [name_x], [name_y]+.1, [card_x]-[name_x]-[pill_x], 0.55, LEFT
+
+
+; ============================================================
+; PORTRAIT — top half of card
+; ============================================================
+
+[image_y] = [name_y]+1.3
+[image_x] = 0.6
+[image_height] = 4.8
+IMAGE=, "[Image]", [image_x], [image_y], [card_x]-2*[image_x], [image_height], 0, P
+
+; ============================================================
+; FLAVOR TEXT — lower third
+; ============================================================
+FONT=Arial, 10, T, #000000
+TEXT=, "[Flavor_Text]", 0.4, 7.0, 6.185, 3.0, left, wordwrap
+
+DISPLAY = "ops_kit_cards.png"
