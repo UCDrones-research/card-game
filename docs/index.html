@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Game Probs</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">deck<span>.</span>prob</div>
+    <div class="logo-sub">probability analyzer</div>
+
+    <div class="deck-status">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2px;">
+        <span style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">deck size</span>
+      </div>
+      <div class="deck-total" id="deckTotal">0 <span class="of50">/ 50</span></div>
+      <div class="deck-bar">
+        <div class="deck-bar-char" id="barChar" style="width:0%"></div>
+        <div class="deck-bar-obj" id="barObj" style="width:0%"></div>
+        <div class="deck-bar-act" id="barAct" style="width:0%"></div>
+      </div>
+      <div class="deck-counts">
+        <span><span class="dot" style="background:var(--char-color)"></span><span id="countChar">0</span> char</span>
+        <span><span class="dot" style="background:var(--obj-color)"></span><span id="countObj">0</span> obj</span>
+        <span><span class="dot" style="background:var(--act-color)"></span><span id="countAct">0</span> act</span>
+      </div>
+    </div>
+
+    <!-- Characters -->
+    <div class="section-label">Characters</div>
+    <div class="config-row">
+      <label><span class="color-pip" style="background:var(--char-color)"></span>Total in deck</label>
+      <div class="num-input">
+        <button onclick="adj('chars',-1)">−</button>
+        <input type="number" id="chars" value="14" min="1" max="49" oninput="update()" />
+        <button onclick="adj('chars',1)">+</button>
+      </div>
+    </div>
+
+    <!-- Object types -->
+    <div class="section-label">Object card types</div>
+    <div class="type-list" id="objTypes"></div>
+    <button class="add-type-btn" onclick="addType('obj')">+ add object type</button>
+
+    <!-- Action types -->
+    <div class="section-label">Action card types</div>
+    <div class="type-list" id="actTypes"></div>
+    <button class="add-type-btn" onclick="addType('act')">+ add action type</button>
+
+    <div style="height:24px"></div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="main-title">Probability Analysis</div>
+    <div class="main-sub" id="mainSub">Configure your deck on the left, explore probabilities below.</div>
+
+    <div id="warnBanner" class="warn-banner">Deck total doesn't equal 50 — probabilities shown are based on actual card counts.</div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('starting')">Starting hand</button>
+      <button class="tab" onclick="switchTab('turns')">After 16 turns</button>
+      <button class="tab" onclick="switchTab('compare')">Summary table</button>
+    </div>
+
+    <!-- TAB: Starting hand -->
+    <div id="tab-starting" class="tab-panel active">
+      <div class="section-title">Starting hand composition</div>
+      <div class="section-desc">Player picks 1 character, then draws 4 random cards. Probabilities below are for those 4 random draws from the remaining deck.</div>
+
+      <div class="hand-vis" id="handVis"></div>
+      <div class="prob-grid" id="startingGrid"></div>
+    </div>
+
+    <!-- TAB: After 16 turns -->
+    <div id="tab-turns" class="tab-panel">
+      <div class="turns-config">
+        <div class="slider-row">
+          <label>Turns to simulate</label>
+          <input type="range" min="1" max="40" value="16" id="turnsSlider" step="1" oninput="document.getElementById('turnsVal').textContent=this.value; update()" />
+          <span class="slider-val" id="turnsVal">16</span>
+        </div>
+      </div>
+
+      <div id="turnsGridWrap"></div>
+    </div>
+
+    <!-- TAB: Summary -->
+    <div id="tab-compare" class="tab-panel">
+      <div class="section-title">Summary table</div>
+      <div class="section-desc">Expected draws and probability of drawing at least 1 of each type, at start and after 16 turns.</div>
+      <div class="chart-wrap">
+        <table class="stat-table" id="summaryTable">
+          <thead>
+            <tr>
+              <th>Card type</th>
+              <th>In deck</th>
+              <th>P(≥1) starting hand</th>
+              <th>Expected at start</th>
+              <th>P(≥1) after 16 turns</th>
+              <th>Expected after 16</th>
+            </tr>
+          </thead>
+          <tbody id="summaryBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
