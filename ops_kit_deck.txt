@@ -74,3 +74,5 @@ FONT=Arial, 10, T, #000000
 TEXT=, "[Flavor_Text]", 0.4, 7.0, 6.185, 3.0, left, wordwrap
 
 DISPLAY = "ops_kit_cards.png"
+
+SAVE=1-{(Type)},"cards\card_b{§}.png",0,0,100%,100%

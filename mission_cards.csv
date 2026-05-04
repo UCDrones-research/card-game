@@ -1,0 +1,11 @@
+Mission_Name,Agriculture,Environmental_Science,Biology_Wildlife,Public_Safety,Industrial_Infrastructure,Media,Permit,Drone_Restriction,Airspace_Authorization,Terrain_Equipment,Quantity
+HARVEST WIND,4,0,0,0,3,2,1,0,0,1,1
+FLOOD SURVEY,0,4,0,3,0,2,0,0,1,1,1
+WILDLIFE CORRIDOR,3,0,3,0,0,3,0,1,0,1,1
+PIPELINE PATROL,0,0,0,3,4,2,1,0,1,0,1
+WILDFIRE WATCH,0,3,3,3,0,0,0,0,1,1,1
+URBAN GRID SCAN,0,0,0,3,4,2,1,1,0,0,1
+COASTAL CENSUS,0,3,4,0,0,2,1,0,1,0,1
+Example 8,3,0,4,0,0,2,0,1,1,0,1
+Example 9,2,4,0,0,3,0,1,1,0,0,1
+Example 10,3,0,2,4,0,0,0,1,0,1,1

@@ -1,0 +1,122 @@
+; ============================================================
+; DRONE OPS — MISSION CARD SCRIPT
+; Card size: 2.5 x 3.5 in (poker)
+; Print target: TabletopSimulator
+; ============================================================
+
+[card_x] = 6.985
+[card_y] = 9.484
+
+; --- PAGE & CARD SETUP ---
+PAGE=21, 29.7, LANDSCAPE
+CARDSIZE=[card_x], [card_y]
+UNIT=CM
+DPI=300
+
+; --- LINK CSV DATA ---
+LINKMULTI=Quantity
+LINK=mission_cards.csv
+
+; ============================================================
+; COLOR PALETTE
+; ============================================================
+[color_bg]=#FFFFFF
+[color_border]=#333333
+[color_pill]=#DDDDDD
+[color_name]=#1A1A1A
+[color_label]=#333333
+[color_text]=#000000
+[color_skill_bg]=#F0F0F0
+[color_ops_bg]=#E8E8E8
+
+; ============================================================
+; BACKGROUND
+; ============================================================
+RECTANGLE=, 0, 0, [card_x], [card_y], [color_bg]
+
+; ============================================================
+; FRAME
+; ============================================================
+[border_xy] = 0.3
+ROUNDRECT=, [border_xy], [border_xy], [card_x]-2*[border_xy], [card_y]-2*[border_xy], [color_border], [color_bg], 0.05, 5
+
+; ============================================================
+; MISSION LABEL — small tag above name
+; ============================================================
+FONT=Arial, 7, T, #888888
+TEXT=, "MISSION", 0.6, 0.55, [card_x]-1.2, 0.3, CENTER
+
+; ============================================================
+; NAME BOX
+; ============================================================
+[name_y] = 0.85
+ROUNDRECT=, 0.5, [name_y], [card_x]-1.0, 1.1, [color_border], [color_pill], 0.05, 8
+FONT=Arial, 13, BT, [color_name]
+TEXT=, "[Mission_Name]", 0.6, [name_y]+0.1, [card_x]-1.2, 0.9, CENTER
+
+; ============================================================
+; SKILL REQUIREMENTS SECTION
+; ============================================================
+[section_y] = 2.2
+FONT=Arial, 8, BT, [color_label]
+TEXT=, "SKILL REQUIREMENTS", 0.6, [section_y], [card_x]-1.2, 0.4, LEFT
+
+; Divider line
+RECTANGLE=, 0.6, [section_y]+0.45, [card_x]-1.2, 0.04, #CCCCCC
+
+; Skill rows — only render if value > 0
+[row_h] = 0.55
+[label_x] = 0.7
+[val_x] = [card_x]-1.4
+[skill_y] = [section_y]+0.6
+
+
+
+; ============================================================
+; NOTE: NanDeck conditional row stacking is limited.
+; For playtesting, all 6 skill rows render — zero values show as 0.
+; Replace with pip icons later using your operator card pattern.
+; ============================================================
+
+[skills_y] = [section_y]+0.6
+FONT=Arial, 9, T, [color_text]
+TEXT=, "Agriculture", [label_x], [skills_y], 4.0, [row_h], LEFT
+TEXT=, "Environmental Science", [label_x], [skills_y]+[row_h], 4.0, [row_h], LEFT
+TEXT=, "Biology / Wildlife", [label_x], [skills_y]+[row_h]*2, 4.0, [row_h], LEFT
+TEXT=, "Public Safety", [label_x], [skills_y]+[row_h]*3, 4.0, [row_h], LEFT
+TEXT=, "Industrial / Infrastructure", [label_x], [skills_y]+[row_h]*4, 4.0, [row_h], LEFT
+TEXT=, "Media", [label_x], [skills_y]+[row_h]*5, 4.0, [row_h], LEFT
+
+FONT=Arial, 9, BT, [color_text]
+TEXT=, "[Agriculture]", [val_x], [skills_y], 0.6, [row_h], RIGHT
+TEXT=, "[Environmental_Science]", [val_x], [skills_y]+[row_h], 0.6, [row_h], RIGHT
+TEXT=, "[Biology_Wildlife]", [val_x], [skills_y]+[row_h]*2, 0.6, [row_h], RIGHT
+TEXT=, "[Public_Safety]", [val_x], [skills_y]+[row_h]*3, 0.6, [row_h], RIGHT
+TEXT=, "[Industrial_Infrastructure]", [val_x], [skills_y]+[row_h]*4, 0.6, [row_h], RIGHT
+TEXT=, "[Media]", [val_x], [skills_y]+[row_h]*5, 0.6, [row_h], RIGHT
+
+; ============================================================
+; OPS KIT REQUIREMENTS SECTION
+; ============================================================
+[ops_y] = [skills_y]+[row_h]*6+0.2
+FONT=Arial, 8, BT, [color_label]
+TEXT=, "OPS KIT REQUIREMENTS", 0.6, [ops_y], [card_x]-1.2, 0.4, LEFT
+RECTANGLE=, 0.6, [ops_y]+0.45, [card_x]-1.2, 0.04, #CCCCCC
+
+[ops_row_y] = [ops_y]+0.6
+FONT=Arial, 9, T, [color_text]
+
+IF=[Permit]=1
+TEXT=, "Permit", [label_x], [ops_row_y], 5.0, [row_h], LEFT
+ENDIF
+IF=[Drone_Restriction]=1
+TEXT=, "Drone Restriction", [label_x], [ops_row_y]+[row_h], 5.0, [row_h], LEFT
+ENDIF
+IF=[Airspace_Authorization]=1
+TEXT=, "Airspace Authorization", [label_x], [ops_row_y]+[row_h]*2, 5.0, [row_h], LEFT
+ENDIF
+IF=[Terrain_Equipment]=1
+TEXT=, "Terrain Equipment", [label_x], [ops_row_y]+[row_h]*3, 5.0, [row_h], LEFT
+ENDIF
+
+DISPLAY="mission_cards.png"

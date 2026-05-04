@@ -1,0 +1,5 @@
+IMAGE=1-20,"cards\card_a{§}.png",0,0,100%,100%
+IMAGE=21-36,"cards\card_b{§-20}.png",0,0,100%,100%
+IMAGE=37-50,"cards\card_c{§-36}.png",0,0,100%,100%
+
+DISPLAY = "all_cards.png"

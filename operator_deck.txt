@@ -157,3 +157,4 @@ FONT=Arial, 9, TI , [color_meta]
 TEXT=, "[Email]", [text_x], [card_y]-.7, [card_x]-2*[text_x], 0.3
 
 DISPLAY = "operator_cards.png"
+SAVE=1-{(Name)},"cards\card_c{§}.png",0,0,100%,100%
