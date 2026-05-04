@@ -7,15 +7,18 @@ Built with [NanDECK](https://www.nandeck.com/) and tested in [Tabletop Simulator
 
 ## Deck Composition
 
-Each player has their own deck of 50 cards:
+Each player has their own deck of 40 cards:
 
 | Card Type | Count |
 |---|---|
-| Operator Cards | 14 |
-| Ops Kit Cards | 16 (4 copies of each of 4 types) |
-| Action Cards | 20 (2 copies of each of 4 types + 12 Train Operator Cards) |
+| Operator Cards | 12 |
+| Ops Kit Cards | 12 (3 copies of each of 4 types) |
+| Action Cards | 16 (2 copies of each of 4 types + 8 Train Operator Cards) |
 
-The Mission deck is shared between all players at the table.
+The Mission List can be found in the rule-book. Selecting the missions will be done with a dice roll to look up. 
+Or maybe each player can select 3 missions (or make up 3 missions), then alternate turns to roll a dice to see who's mission is selected.
+
+**TBD**
 
 ---
 

@@ -1,6 +1,6 @@
 Name,Gameplay_Text,Flavor_Text,Image,Quantity
-Change Order,Swap one Ops Kit requirement on any active Mission with another.,,,2
-Signal Interference,Target Player discards one card from their hand and draws a new card.,,,2
-Grounded,"Target Player loses their next turn, or pause Mission Creep for one round.",,,2
-Cross-Training,Change one skill category on any target Operator to a different skill category.,,,2
-Train Operator,Target Operator gains one skill point in any of their existing skills,,,12
+Change Order,"Exchange one Ops Kit requirement on a Mission with another. Choose from: Permit, Blue List UAS, Airspace Authorization, or Terrain Equipment.",,,2
+Signal Interference,"Target Player discards two cards. If you target yourself, you may draw two cards or retrieve one card from your discard pile.",,,2
+Grounded,"Target Player skips their next turn, or Mission Creep is paused for one round.",,,2
+Reframe,"Exchange one skill category requirement on a Mission with another. Choose from: Agriculture, Environmental Science, Biology & Wildlife, Public Safety, Industrial Infrastructure, or Media.",,,2
+Train Operator,Target Operator gains one skill point in any of their existing skills,,,8
