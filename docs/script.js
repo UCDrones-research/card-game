@@ -2,19 +2,19 @@
 let state = {
   chars: 14,
   objTypes: [
-    { name: "Permit", count: 3 },
-    { name: "Drone", count: 3 },
-    { name: "Airspace", count: 3 },
-    { name: "Equip", count: 3 },
-    { name: "Payload", count: 3 },
-    { name: "Crew", count: 3 }
+    { name: "Permit", count: 4 },
+    { name: "Drone", count: 4 },
+    { name: "Airspace", count: 4 },
+    { name: "Equip", count: 4 },
+    { name: "Payload", count: 0 },
+    { name: "Crew", count: 0 }
   ],
   actTypes: [
     { name: "Change", count: 2 },
     { name: "Interfere", count: 2 },
     { name: "Ground", count: 2 },
     { name: "Cross", count: 2 },
-    { name: "Train", count: 10 }
+    { name: "Train", count: 12 }
   ],
   turns: 16
 };
