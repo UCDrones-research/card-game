@@ -1,6 +1,6 @@
 Name,Gameplay_Text,Flavor_Text,Image,Quantity
 Change Order,"Exchange one Ops Kit requirement on a Mission with another. Choose from: Permit, Blue List UAS, Airspace Authorization, or Terrain Equipment.",,,2
-Signal Interference,"Target Player discards two cards. If you target yourself, you may draw two cards or retrieve one card from your discard pile.",,,2
+Power Cycle,"Discard two cards, then draw two cards or retrieve one Operator or Ops Kit card from your discard pile. You may play one additional card this turn.",,,3
 Grounded,"Target Player skips their next turn, or Mission Creep is paused for one round.",,,2
 Reframe,"Exchange one skill category requirement on a Mission with another. Choose from: Agriculture, Environmental Science, Biology & Wildlife, Public Safety, Industrial Infrastructure, or Media.",,,2
-Train Operator,Target Operator gains one skill point in any of their existing skills,,,8
+Train Operator,Target Operator gains one skill point in any of their existing skills,,,7
