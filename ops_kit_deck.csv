@@ -1,7 +1,4 @@
-Type,Flavor_Text,Image,Quantity
-Permit,Authorizes operations beyond standard Part 107 limitations including night flight and flight over people.,ops/permit.png,3
-Blue List UAS,Only aircraft on the Department of Defense Blue UAS list may be used for federal contracts requiring data security.,ops/drone.png,3
-Airspace Authorization,Automated airspace authorization for operations in controlled airspace below 400 feet AGL.,ops/airspace.png,3
-Terrain Equipment,"Specialized ground support equipment for operations in remote, rugged, or waterlogged terrain.",ops/terrain.png,3
-Specialized Payload,"Captures data across multiple wavelengths for crop health, environmental, and scientific analysis.",ops/payload.png,0
-Crew Support,Trained ground crew maintaining unaided visual contact with the aircraft during operations beyond pilot line of sight.,ops/crew.png,0
+Type,skill1,skill2,flavor,Image,Quantity
+Specialty Drone,Public Safety,Industrial,Purpose built. Every payload has a reason,ops/drone.png,3
+Airspace Authorization,Agriculture,Media,Paperwork filed. Airspace opened. Mission on.,ops/airspace.png,3
+Terrain Equipment,Environmental,Biology,"Boats, trucks, boots. Whatever it takes to reach the site.",ops/terrain.png,3

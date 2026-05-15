@@ -1,6 +1,6 @@
 Name,Gameplay_Text,Flavor_Text,Image,Quantity
-Change Order,"Exchange one Ops Kit requirement on a Mission with another. Choose from: Permit, Blue List UAS, Airspace Authorization, or Terrain Equipment.",,,2
-Power Cycle,"Discard two cards, then draw two cards or retrieve one Operator or Ops Kit card from your discard pile. You may play one additional card this turn.",,,3
-Grounded,"Target Player skips their next turn, or Mission Creep is paused for one round.",,,2
-Reframe,"Exchange one skill category requirement on a Mission with another. Choose from: Agriculture, Environmental Science, Biology & Wildlife, Public Safety, Industrial Infrastructure, or Media.",,,2
-Train Operator,Target Operator gains one skill point in any of their existing skills,,,7
+Change Order,Choose an active Mission. Replace one of its skill category requirements with a different skill category. (Ag · Env · Bio · Safety · Industrial · Media),,,19
+Power Cycle,Set aside two cards from your hand. Draw two cards. Shuffle the set aside cards into your deck.,,,9
+Grounded,You skip your next turn.,,,1
+Call a Friend,Search your deck for any Operator and deploy them immediately. Shuffle your deck.,,,1
+Train Operator,Choose one of your Operators. That Operator gains 1 point in one of its existing skill categories.,,,34

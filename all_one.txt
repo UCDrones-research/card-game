@@ -1,5 +1,5 @@
-IMAGE=1-16,"cards\card_a{§}.png",0,0,100%,100%
-IMAGE=17-28,"cards\card_b{§-16}.png",0,0,100%,100%
-IMAGE=29-40,"cards\card_c{§-28}.png",0,0,100%,100%
+IMAGE=1-21,"cards\operator_{§}.png",0,0,100%,100%
+IMAGE=22-30,"cards\gear_{§-21}.png",0,0,100%,100%
+
 
 DISPLAY = "all_cards.png"

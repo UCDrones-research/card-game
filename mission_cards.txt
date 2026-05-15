@@ -106,17 +106,14 @@ RECTANGLE=, 0.6, [ops_y]+0.45, [card_x]-1.2, 0.04, #CCCCCC
 [ops_row_y] = [ops_y]+0.6
 FONT=Arial, 9, T, [color_text]
 
-IF=[Permit]=1
-TEXT=, "Permit", [label_x], [ops_row_y], 5.0, [row_h], LEFT
-ENDIF
 IF=[Blue_List_UAS]=1
-TEXT=, "Blue List UAS", [label_x], [ops_row_y]+[row_h], 5.0, [row_h], LEFT
+TEXT=, "Blue List UAS", [label_x], [ops_row_y], 5.0, [row_h], LEFT
 ENDIF
 IF=[Airspace_Authorization]=1
-TEXT=, "Airspace Authorization", [label_x], [ops_row_y]+[row_h]*2, 5.0, [row_h], LEFT
+TEXT=, "Airspace Authorization", [label_x], [ops_row_y]+[row_h]*1, 5.0, [row_h], LEFT
 ENDIF
 IF=[Terrain_Equipment]=1
-TEXT=, "Terrain Equipment", [label_x], [ops_row_y]+[row_h]*3, 5.0, [row_h], LEFT
+TEXT=, "Terrain Equipment", [label_x], [ops_row_y]+[row_h]*2, 5.0, [row_h], LEFT
 ENDIF
 
 DISPLAY="mission_cards.png"
