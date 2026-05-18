@@ -7,13 +7,14 @@ Built with [NanDECK](https://www.nandeck.com/) and tested in [Tabletop Simulator
 
 ## Deck Composition
 
-Each player has their own deck of 40 cards:
+Each player has their own deck of 25 cards:
 
 | Card Type | Count |
 |---|---|
-| Operator Cards | 12 |
-| Ops Kit Cards | 12 (3 copies of each of 4 types) |
-| Action Cards | 16 (2 copies of each of 4 types + 8 Train Operator Cards) |
+| Operator Cards | 16 |
+| Mission Gear Cards | 9 (3 copies of each of 3 types) |
+
+*More than 16 operators will be available, choose your team wisely to conquer any mission you might face*
 
 The Mission List can be found in the rule-book. Selecting the missions will be done with a dice roll to look up. 
 Or maybe each player can select 3 missions (or make up 3 missions), then alternate turns to roll a dice to see who's mission is selected.
@@ -24,14 +25,36 @@ Or maybe each player can select 3 missions (or make up 3 missions), then alterna
 
 ## Core Gameplay Loop
 
-Each turn, a player draws to a hand of five cards, then may play up to 2 cards in any order:
+Each turn, a player draws to a hand of four cards, then may take two actions in any order:
 
 - **Deploy** — play one Operator card to your team,
-- **Train Operator** - Upgrade an existing Operator
-- **Play an Ops Kit card** — add one resource or credential to your active setup
-- **Play an Action card** — use one action card effect
+- **Play a Gear card** — add one Gear or give an operator +2 to a skill
+- **Conduct a Test Flight** — Roll a pair of dice for a random outcome
 
-All actions are optional and can be taken in any order. A player may choose to skip any or all of them.
+
+### Mission Gear
+
+Drone missions require more than just the drone and operators. Our missioins will require one of three different Mission Gears to complete:
+
+ - **Specialty Drone** - Sometimes you need a multi-spectral drone, or a Blue-List Drone to complete the mission. Alternatively, add +2 to either Public Safety or Industrial skills to an operator.
+ - **Airspace Authorization** - Flying in controlled airspace requires an Airspace Authorization. Alternatively, add +2 to either Agriculture or Media skills to an operator.
+ - **Terrain Equipment** - Sometiems you need a boat or a 4x4 to get to your study site. Alternatively, add +2 to either Environmental or Biology skills to an operator.
+
+
+### Test Flight Outcomes
+
+Conducting a test flight is always a roll of the dice. Most of the time, you'll get more experience, or you'll realize that you need to adjust the mission, but you never know what might happen.
+
+| Roll | Action | Description| Probability |
+|---|---|---|---|
+| 2 | Grounded | Your drone crashed, skip your next turn | 6.25 |
+| 3-4 | Change Order | Choose an active Mission. Replace once of it's skill category mission requirements with a different skill category. (Ag-Env-Bio-Safety-Industrial-Media)| 31.25 |
+| 5-6 | Train Operator | Choose one of your Operators. That Operator gains 1 skill point in one of its existing skill categories | 43.75 |
+| 7 | Power Cycle | Drone was acting strangely. Set aside two cards from your hand. Draw two cards. Shuffle the set aside cards into your deck. | 12.5 | 
+| 8 | Call a Friend | Sounds like a fun mission. Search your deck for any Operator and put them into play. Shuffle your deck. |
+
+
+
 
 ### Declaring Completion
 
@@ -62,8 +85,7 @@ Every 4 rounds a new Mission card is added to the active pool from the shared Mi
 | 1 | Complete 1 to win |
 | 2 | Complete 2 simultaneously to win |
 | 3 | Complete 3 simultaneously to win |
-| 4 | Complete 4 simultaneously to win |
-| 5 | **Loss condition triggered — all players lose** |
+| 4 | **Loss condition triggered — all players lose** |
 
 ### Difficulty
 
@@ -90,15 +112,15 @@ At conventions, blank cards are distributed at registration as an icebreaker act
 
 > A regional energy company has contracted a survey of their wind farm situated across active cropland in the midwest. The operation requires detailed crop health mapping across 200 acres, structural inspection of 12 turbines, and aerial photography for the company's annual report and public website.
 
-**Skill Requirements** — 9 points across:
+**Skill Requirements** — 12 points across:
 
 | Skill | Points |
 |---|---|
-| Agriculture | 4 |
-| Industrial/Infrastructure | 3 |
-| Media | 2 |
+| Agriculture | 5 |
+| Industrial/Infrastructure | 4 |
+| Media | 3 |
 
-**Ops Kit Requirements:** Permit · Drone Type
+**Mission Gear Requirements:** Specialty Drone
 
 *Federal funding requirements mandate a Blue UAS compliant aircraft. A VTOL platform is recommended for efficient coverage across the turbine corridors. Permits must include proof of insurance and USDA compliance documentation. Multispectral payload captures crop health data while RGB imaging delivers publication quality photography for stakeholder communications.*
 
@@ -108,15 +130,15 @@ At conventions, blank cards are distributed at registration as an icebreaker act
 
 > A major studio production requires aerial coverage of a car chase sequence through downtown Los Angeles at dusk. The production window is narrow — golden hour lighting lasts approximately 22 minutes. Coordination with LAPD and FAA is mandatory for flight over populated areas.
 
-**Skill Requirements** — 9 points across:
+**Skill Requirements** — 12 points across:
 
 | Skill | Points |
 |---|---|
-| Media | 4 |
-| Public Safety | 3 |
-| Industrial/Infrastructure | 2 |
+| Media | 5 |
+| Public Safety | 4 |
+| Industrial/Infrastructure | 3 |
 
-**Ops Kit Requirements:** Airspace Authorization · Permit 
+**Mission Gear Requirements:** Airspace Authorization 
 
 *Operations near LAX Class B airspace require LAANC authorization. The production permit covers temporary closure of two city blocks. A high resolution stabilized gimbal payload delivers broadcast quality footage within the tight shooting window.*
 
@@ -126,14 +148,14 @@ At conventions, blank cards are distributed at registration as an icebreaker act
 
 > A federal emergency management agency has contracted a post-wildfire assessment of agricultural land adjacent to burned wilderness in Northern California. The operation maps crop loss across 500 acres, documents soil erosion risk along fire break boundaries, and provides environmental impact data to support disaster relief funding applications.
 
-**Skill Requirements** — 9 points across:
+**Skill Requirements** — 12 points across:
 
 | Skill | Points |
 |---|---|
-| Agriculture | 4 |
-| Environmental Science | 3 |
-| Public Safety | 2 |
+| Agriculture | 5 |
+| Environmental Science | 4 |
+| Public Safety | 3 |
 
-**Ops Kit Requirements:** Airspace Authorization · Terrain Equipment 
+**Ops Kit Requirements:**  Terrain Equipment 
 
-*Active Temporary Flight Restrictions require LAANC authorization and direct coordination with incident command. Post-fire terrain presents significant hazards including unstable soil, hidden ember beds, and compromised vegetation. Multispectral imaging identifies crop loss severity and soil moisture levels critical for erosion risk modeling and USDA disaster relief documentation.*
+*Post-fire terrain presents significant hazards including unstable soil, hidden ember beds, and compromised vegetation. Multispectral imaging identifies crop loss severity and soil moisture levels critical for erosion risk modeling and USDA disaster relief documentation.*
